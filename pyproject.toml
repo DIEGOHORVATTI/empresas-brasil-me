@@ -1,0 +1,17 @@
+[project]
+name = "empresas-brasil-me"
+version = "0.1.0"
+description = "Coleta de dados de empresas brasileiras via dados abertos da Receita Federal e APIs públicas"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28",
+    "click>=8.1",
+    "tqdm>=4.66",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

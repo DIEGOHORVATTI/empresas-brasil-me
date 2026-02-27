@@ -1,0 +1,11 @@
+data/
+*.db
+*.sqlite
+__pycache__/
+*.pyc
+.venv/
+.env
+*.zip
+*.csv
+dist/
+*.egg-info/
