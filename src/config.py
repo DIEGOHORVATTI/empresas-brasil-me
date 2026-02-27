@@ -7,8 +7,10 @@ DB_DIR = DATA_DIR / "db"
 DB_PATH = DB_DIR / "empresas.db"
 
 # Receita Federal - Dados Abertos CNPJ
-RF_BASE_URL = "https://dadosabertos.rfb.gov.br/CNPJ/dados_abertos_cnpj"
-RF_FALLBACK_URL = "https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj"
+# Mirror Casa dos Dados (CDN rápido, atualização mensal)
+RF_BASE_URL = "http://dados-abertos-rf-cnpj.casadosdados.com.br/arquivos"
+# Index da Casa dos Dados para descobrir períodos
+RF_INDEX_URL = "http://dados-abertos-rf-cnpj.casadosdados.com.br/arquivos/"
 
 # Arquivos da RF (37 total)
 RF_FILES = {

@@ -5,22 +5,21 @@ from pathlib import Path
 import httpx
 from tqdm import tqdm
 
-from src.config import RAW_DIR, RF_BASE_URL, RF_FALLBACK_URL
+from src.config import RAW_DIR, RF_BASE_URL, RF_INDEX_URL
 
 
 async def discover_latest_period(client: httpx.AsyncClient) -> str:
-    """Descobre o período mais recente disponível na RF."""
-    for base in (RF_BASE_URL, RF_FALLBACK_URL):
-        try:
-            resp = await client.get(f"{base}/", follow_redirects=True)
-            resp.raise_for_status()
-            # Busca padrões YYYY-MM no HTML do index
-            periods = re.findall(r"(\d{4}-\d{2})", resp.text)
-            if periods:
-                return sorted(set(periods))[-1]
-        except httpx.HTTPError:
-            continue
-    raise RuntimeError("Não foi possível descobrir o período mais recente dos dados da RF")
+    """Descobre o período mais recente disponível no mirror Casa dos Dados."""
+    resp = await client.get(RF_INDEX_URL, follow_redirects=True)
+    resp.raise_for_status()
+    # Busca padrões YYYY-MM-DD apenas em links href (diretórios reais)
+    periods = re.findall(r'href="(\d{4}-\d{2}-\d{2})/?"', resp.text)
+    if periods:
+        return sorted(set(periods))[-1]
+    raise RuntimeError(
+        "Não foi possível descobrir o período mais recente. "
+        f"Verifique manualmente: {RF_INDEX_URL}"
+    )
 
 
 async def download_file(
@@ -39,7 +38,7 @@ async def download_file(
     head = await client.head(url, follow_redirects=True)
     total_size = int(head.headers.get("content-length", 0))
 
-    if existing_size and existing_size >= total_size:
+    if existing_size and existing_size >= total_size and total_size > 0:
         return dest  # Já baixado
 
     if existing_size:
@@ -85,12 +84,7 @@ async def download_all(
             async with semaphore:
                 url = f"{base_url}/{name}"
                 dest = RAW_DIR / period / name
-                try:
-                    return await download_file(client, url, dest)
-                except httpx.HTTPError:
-                    # Tenta fallback
-                    fallback_url = f"{RF_FALLBACK_URL}/{period}/{name}"
-                    return await download_file(client, fallback_url, dest)
+                return await download_file(client, url, dest)
 
         tasks = [_download(name) for name in file_names]
         for coro in asyncio.as_completed(tasks):
