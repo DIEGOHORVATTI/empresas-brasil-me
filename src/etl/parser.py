@@ -24,12 +24,16 @@ def parse_zip(zip_path: Path, tipo: str) -> Generator[dict, None, None]:
     field_names = [f.name for f in model_cls.__dataclass_fields__.values()]
 
     with zipfile.ZipFile(zip_path) as zf:
-        for entry in zf.namelist():
-            if not entry.endswith(".csv") and not entry.endswith(".CSV"):
-                # Tenta de qualquer forma (RF às vezes muda extensão)
-                pass
+        for entry in zf.infolist():
+            if entry.is_dir() or entry.filename.startswith("__MACOSX"):
+                continue
 
-            with zf.open(entry) as raw:
+            try:
+                raw = zf.open(entry)
+            except zipfile.BadZipFile:
+                continue
+
+            with raw:
                 text = io.TextIOWrapper(raw, encoding="latin-1")
                 reader = csv.reader(text, delimiter=";")
 
