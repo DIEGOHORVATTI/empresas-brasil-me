@@ -109,6 +109,7 @@ CREATE INDEX IF NOT EXISTS idx_estabelecimentos_situacao ON estabelecimentos(sit
 CREATE INDEX IF NOT EXISTS idx_empresas_porte ON empresas(porte_empresa);
 CREATE INDEX IF NOT EXISTS idx_socios_cnpj ON socios(cnpj_basico);
 CREATE INDEX IF NOT EXISTS idx_simples_mei ON simples(opcao_mei);
+CREATE INDEX IF NOT EXISTS idx_estabelecimentos_data_inicio ON estabelecimentos(data_inicio_atividade);
 """
 
 

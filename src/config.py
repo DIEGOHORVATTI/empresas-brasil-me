@@ -5,6 +5,7 @@ DATA_DIR = BASE_DIR / "data"
 RAW_DIR = DATA_DIR / "raw"
 DB_DIR = DATA_DIR / "db"
 DB_PATH = DB_DIR / "empresas.db"
+LOG_DIR = DATA_DIR / "logs"
 
 # Receita Federal - Dados Abertos CNPJ
 # Mirror Casa dos Dados (CDN rápido, atualização mensal)
