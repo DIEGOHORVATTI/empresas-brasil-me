@@ -24,7 +24,7 @@ NEW_JOBS=$(cat <<EOF
 # Diário 6h - busca novas empresas via API Casa dos Dados $CRON_TAG
 0 6 * * * cd $PROJECT_DIR && uv run python scripts/cron_novas_empresas.py --dias 1 >> data/logs/diario.log 2>&1 $CRON_TAG
 
-# Mensal dia 15 às 3h - download + importação completa RF $CRON_TAG
+# Mensal dia 15 às 3h - download + importação + materialização RF $CRON_TAG
 0 3 15 * * cd $PROJECT_DIR && uv run python scripts/cron_bulk_mensal.py >> data/logs/mensal.log 2>&1 $CRON_TAG
 EOF
 )

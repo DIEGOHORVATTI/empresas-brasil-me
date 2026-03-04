@@ -108,6 +108,24 @@ def main(
             log.info(f"  {fname}: {count:,} registros")
 
     conn.close()
+    log.info("Importação concluída.")
+
+    # --- MATERIALIZAÇÃO ---
+    log.info("Fase 3: Materializando leads_pool (DuckDB → SQLite)...")
+    import subprocess
+
+    result = subprocess.run(
+        ["uv", "run", "python", "scripts/materializar_leads.py", "--force"],
+        cwd=str(__import__("pathlib").Path(__file__).parent.parent),
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode == 0:
+        for line in result.stdout.strip().split("\n"):
+            log.info(f"  {line}")
+    else:
+        log.error(f"Erro na materialização: {result.stderr}")
+
     log.info("=== Pipeline concluído com sucesso ===")
 
 

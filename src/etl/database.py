@@ -112,6 +112,44 @@ CREATE INDEX IF NOT EXISTS idx_simples_mei ON simples(opcao_mei);
 CREATE INDEX IF NOT EXISTS idx_estabelecimentos_data_inicio ON estabelecimentos(data_inicio_atividade);
 """
 
+LEADS_POOL_SCHEMA = """
+CREATE TABLE IF NOT EXISTS leads_pool (
+    cnpj TEXT PRIMARY KEY,
+    cnpj_basico TEXT,
+    razao_social TEXT,
+    nome_fantasia TEXT,
+    email TEXT,
+    telefone TEXT,
+    telefone_2 TEXT,
+    decisor TEXT,
+    cargo_decisor TEXT,
+    cnae TEXT,
+    cnae_descricao TEXT,
+    porte TEXT,
+    capital_social REAL,
+    uf TEXT,
+    municipio_cod TEXT,
+    cidade TEXT,
+    bairro TEXT,
+    endereco TEXT,
+    cep TEXT,
+    data_inicio TEXT,
+    dias_abertura INTEGER,
+    opcao_simples TEXT,
+    opcao_mei TEXT,
+    tem_email INTEGER,
+    tem_telefone INTEGER,
+    tem_decisor INTEGER
+);
+
+CREATE INDEX IF NOT EXISTS idx_lp_cnae_uf ON leads_pool(cnae, uf);
+CREATE INDEX IF NOT EXISTS idx_lp_uf_cnae ON leads_pool(uf, cnae);
+CREATE INDEX IF NOT EXISTS idx_lp_municipio ON leads_pool(municipio_cod);
+CREATE INDEX IF NOT EXISTS idx_lp_data ON leads_pool(data_inicio);
+CREATE INDEX IF NOT EXISTS idx_lp_porte ON leads_pool(porte);
+CREATE INDEX IF NOT EXISTS idx_lp_flags ON leads_pool(tem_email, tem_telefone);
+"""
+
 
 def get_connection(db_path: Path = DB_PATH) -> sqlite3.Connection:
     db_path.parent.mkdir(parents=True, exist_ok=True)
