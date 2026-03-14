@@ -11,7 +11,7 @@ sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent.parent))
 
 @click.command()
 @click.argument("cnpj")
-@click.option("--fonte", "-f", type=click.Choice(["opencnpj", "minhareceita", "local"]), default="opencnpj")
+@click.option("--fonte", "-f", type=click.Choice(["opencnpj", "minhareceita", "local"]), default="minhareceita")
 @click.option("--uf", help="Filtro por UF (apenas fonte=local)")
 @click.option("--porte", help="Filtro por porte: 01=ME, 03=EPP, 05=Demais (apenas fonte=local)")
 def main(cnpj: str, fonte: str, uf: str | None, porte: str | None):
