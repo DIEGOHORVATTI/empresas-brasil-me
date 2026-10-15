@@ -1,0 +1,11 @@
+{
+  "name": "empresas-brasil",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev": "bun run --filter 'empresas-frontend' --filter 'empresas-backend' dev",
+    "dev:all": "bun run --filter '*' dev",
+    "dev:wa": "bun run --filter 'empresas-mailer' whatsapp",
+    "build": "bun run --filter 'empresas-frontend' build"
+  }
+}

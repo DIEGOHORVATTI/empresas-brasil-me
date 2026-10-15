@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove o ring/outline branco de foco nos campos */
+input:focus,
+input:focus-visible,
+[data-slot="input-wrapper"],
+[data-slot="trigger"]:focus,
+[data-slot="trigger"]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}

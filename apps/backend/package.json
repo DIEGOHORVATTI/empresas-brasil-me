@@ -1,0 +1,8 @@
+{
+  "name": "empresas-backend",
+  "private": true,
+  "scripts": {
+    "dev": "uv run uvicorn src.api.web:app --reload --port 8010",
+    "build": "uv run python -c \"from src.etl.database import get_connection, init_db; init_db(get_connection())\""
+  }
+}

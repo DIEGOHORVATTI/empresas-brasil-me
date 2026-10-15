@@ -1,11 +1,21 @@
-data/
-*.db
-*.sqlite
+# Node (qualquer nível do monorepo)
+node_modules/
+
+# Python
 __pycache__/
 *.pyc
 .venv/
-.env
-*.zip
-*.csv
-dist/
 *.egg-info/
+
+# Build
+dist/
+
+# Dados
+data/
+*.db
+*.sqlite
+*.csv
+*.zip
+
+# Segredos
+.env

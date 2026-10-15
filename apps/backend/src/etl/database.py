@@ -110,6 +110,35 @@ CREATE INDEX IF NOT EXISTS idx_empresas_porte ON empresas(porte_empresa);
 CREATE INDEX IF NOT EXISTS idx_socios_cnpj ON socios(cnpj_basico);
 CREATE INDEX IF NOT EXISTS idx_simples_mei ON simples(opcao_mei);
 CREATE INDEX IF NOT EXISTS idx_estabelecimentos_data_inicio ON estabelecimentos(data_inicio_atividade);
+
+CREATE TABLE IF NOT EXISTS envios (
+    cnpj TEXT PRIMARY KEY,   -- cnpj completo (basico+ordem+dv)
+    email TEXT,
+    template TEXT,           -- nicho usado
+    status TEXT,             -- enviado, erro, opt_out
+    provider TEXT,           -- brevo, ses...
+    enviado_em TEXT          -- ISO datetime
+);
+
+-- Empresas coletadas do Google Maps por raio/cidade (sem CNPJ; base própria).
+CREATE TABLE IF NOT EXISTS maps_empresas (
+    place_id TEXT PRIMARY KEY,
+    nome TEXT,
+    categoria TEXT,
+    endereco TEXT,
+    telefone TEXT,
+    website TEXT,
+    rating REAL,
+    reviews INTEGER,
+    latitude REAL,
+    longitude REAL,
+    cidade TEXT,
+    uf TEXT,
+    query TEXT,
+    maps_url TEXT,
+    coletado_em TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_maps_cidade ON maps_empresas(cidade);
 """
 
 

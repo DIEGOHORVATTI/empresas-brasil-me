@@ -1,0 +1,105 @@
+{
+  "assinatura": "Abraço,\nDiego Horvatti\nHorvatti, design, automação e IA\nhorvatti.com",
+  "opt_out": "Se não for do seu interesse, me responde com um \"não\" que eu não escrevo de novo.",
+  "nichos": {
+    "geral": {
+      "prefixos": [],
+      "assunto": "Uma ideia pra {nome}",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Aqui é o Diego, de Florianópolis, e vou ser direto no motivo do contato.",
+        "Trabalho com uma coisa específica: pegar dinheiro que a empresa já poderia estar ganhando e não ganha, quase sempre porque algum processo é lento ou porque cliente e lead ficam sem acompanhamento. Uso automação e IA pra isso, mas o ponto nunca é a tecnologia, é a receita.",
+        "Se em algum momento fizer sentido olhar onde isso acontece no seu negócio, é só me responder. Sem apresentação de slides, uma conversa direta de 30 minutos."
+      ]
+    },
+    "imobiliario": {
+      "prefixos": ["68"],
+      "assunto": "Uma ideia pra {nome}",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Diego aqui, de Florianópolis.",
+        "No imobiliário uma coisa me chama atenção: o custo de um lead que chega e não é respondido na hora. A pessoa manda mensagem pra três imobiliárias, fecha com a que respondeu primeiro, e a comissão inteira vai embora por causa de vinte minutos de atraso. E a base de quem visitou e não fechou quase nunca volta a ser trabalhada.",
+        "É aí que eu atuo: resposta na hora, acompanhamento que não deixa o lead esfriar, e a base antiga voltando a produzir. Se quiser trocar uma ideia sobre isso, me responde aqui."
+      ]
+    },
+    "construcao": {
+      "prefixos": ["41", "42", "43"],
+      "assunto": "Sobre seus orçamentos",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Aqui é o Diego, de Florianópolis.",
+        "Em construção e reforma o que mais me chama atenção é o valor de uma proposta que fica sem follow-up. São orçamentos de dezenas de milhares que o cliente pediu, recebeu e ninguém retornou. Aí ele fecha com quem foi atrás, nem sempre com quem tinha o melhor preço.",
+        "Eu cuido justamente disso, do lead ser respondido rápido e da proposta ser acompanhada até virar um sim. Se fizer sentido pro seu negócio, me responde que a gente conversa."
+      ]
+    },
+    "saude": {
+      "prefixos": ["86", "75"],
+      "assunto": "Sobre a agenda da clínica",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Diego aqui, de Florianópolis.",
+        "Em clínica tem um número que quase ninguém olha: quanto custa a cadeira vazia. O paciente que falta e não avisa, ou que fez um procedimento uma vez e nunca mais voltou, é receita que já estava quase na mão e sumiu. No fim do mês isso é bastante dinheiro parado.",
+        "O que eu faço é fechar esses furos, a falta cai e o paciente antigo volta, sem sobrecarregar a recepção. Se quiser ver como ficaria na sua clínica, é só responder."
+      ]
+    },
+    "veiculos": {
+      "prefixos": ["45"],
+      "assunto": "Uma ideia pra {nome}",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Aqui é o Diego, de Florianópolis.",
+        "Em revenda de veículos cada negócio perdido é um valor alto, e boa parte se perde no mesmo lugar: o interessado que perguntou sobre um carro e não teve retorno rápido, ou o cliente que comprou e nunca mais foi chamado pra nada. É comissão e recompra ficando na mesa.",
+        "Eu trabalho pra que nenhum desses contatos caia no vácuo, do primeiro retorno ao acompanhamento depois da venda. Se topar uma conversa sobre isso, me responde."
+      ]
+    },
+    "contabilidade": {
+      "prefixos": ["69"],
+      "assunto": "Sobre a rotina do escritório",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Diego aqui, de Florianópolis.",
+        "Em contabilidade e advocacia o gargalo raramente é captar cliente, é o tempo que a equipe gasta no repetitivo: cobrar documento todo mês, fazer onboarding na mão, correr atrás de honorário. É gente qualificada indo embora em tarefa que uma automação faria sozinha, e é margem que some sem aparecer.",
+        "É esse tipo de coisa que eu tiro do caminho, pra equipe sobrar pro que exige cabeça e o escritório aguentar mais cliente sem contratar. Se fizer sentido, me responde."
+      ]
+    },
+    "industria": {
+      "prefixos": [],
+      "assunto": "Sobre suas cotações",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Aqui é o Diego, de Florianópolis.",
+        "Na indústria um pedido B2B costuma ser valor alto, e muito disso se perde na cotação lenta. O cliente pede orçamento, o comercial demora porque está afogado no manual, e quando responde o outro fornecedor já fechou. Some junto a recompra de quem já comprou e não foi acompanhado.",
+        "Eu acelero a cotação e mantenho o acompanhamento desses clientes, pra pedido não escapar por lentidão. Se quiser conversar sobre isso pro seu negócio, me responde."
+      ]
+    },
+    "atacado": {
+      "prefixos": ["46"],
+      "assunto": "Sobre sua carteira de clientes",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Diego aqui, de Florianópolis.",
+        "No atacado o dinheiro está na recompra, e é justamente ela que escorre sem ninguém ver. O representante não tem braço pra acompanhar toda a carteira, então cliente que reduziu ou parou de comprar passa despercebido por meses. Numa operação de volume, isso é muito faturamento.",
+        "Meu trabalho é fazer esse acompanhamento acontecer sozinho e avisar quando um cliente esfria, pra o time agir a tempo. Se fizer sentido pro seu negócio, me responde."
+      ]
+    },
+    "servicos": {
+      "prefixos": ["70", "71", "73", "74", "77", "78", "80", "81", "82"],
+      "assunto": "Sobre suas propostas",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Aqui é o Diego, de Florianópolis.",
+        "Em serviços e projeto o ticket é alto e o ciclo é longo, então cada lead vale muito. E o que mais vejo é proposta boa que morre no follow-up: o cliente ficou de pensar, ninguém retornou, e semanas depois fechou com outro. Não foi preço, foi acompanhamento.",
+        "Eu cuido pra que nenhuma proposta fique sem retorno e o lead seja trabalhado até decidir. Se quiser trocar uma ideia sobre isso, me responde."
+      ]
+    },
+    "educacao": {
+      "prefixos": ["85"],
+      "assunto": "Sobre matrícula e renovação",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Diego aqui, de Florianópolis.",
+        "Em escola e curso a conta que importa é matrícula e renovação, e as duas vazam no mesmo ponto: o interessado que pediu informação e não foi acompanhado, e o aluno que dá sinais de que vai sair antes de renovar. Cada um desses é uma mensalidade inteira, às vezes um ano.",
+        "Eu trabalho pra o interessado ser acompanhado até a matrícula e pra você agir antes do aluno evadir. Se fizer sentido pra você, me responde."
+      ]
+    },
+    "transporte": {
+      "prefixos": ["49", "52", "53"],
+      "assunto": "Uma ideia pra {nome}",
+      "paragrafos": [
+        "{saudacao}, tudo bem? Aqui é o Diego, de Florianópolis.",
+        "Em transporte a margem é apertada, então o cliente recorrente é o que sustenta a operação. E ele some fácil: a cotação demora, o atendimento não dá conta, e quem embarcava toda semana simplesmente vai pra outra transportadora sem ninguém perceber.",
+        "Eu trabalho pra cotação sair rápido e pra cliente que esfria ser recuperado a tempo. Se quiser conversar sobre isso pra você, me responde."
+      ]
+    }
+  }
+}
